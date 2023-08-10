@@ -18,6 +18,9 @@ const Cart = new Schema({
     phone:{
       type:String
   },
+    price:{
+      type:String
+  },
   status:{
     type:Boolean
 },

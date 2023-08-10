@@ -66,7 +66,7 @@ class UserController {
       
           const isPasswordMatch = user.password === password;
       
-          if (isPasswordMatch) {
+          if (isPasswordMatch && phone != 0) {
             req.session.user = user;
             
             // res.redirect('/user/account');
@@ -77,6 +77,25 @@ class UserController {
 
          return;
            
+          } else if (isPasswordMatch && phone == 0) {
+            
+            
+            Cart.find({})
+              .then((cartItem) => {
+                req.session.user = user;
+                res.render('admin/home', {
+                  user: req.session.user,
+                  cartItem: mutipleMongooseToObject(cartItem), // Convert the user data to a regular object to pass to the template
+                });
+
+              })
+              .catch(next)
+
+
+              
+            // res.redirect('/user/account');
+
+              return;
           }
       
           // // Mật khẩu không khớp

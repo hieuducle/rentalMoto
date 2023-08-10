@@ -1,8 +1,3 @@
-
-
-
-
-
 const ListMotobike = require('../models/ListMotobike');
 
 const User = require('../models/User');

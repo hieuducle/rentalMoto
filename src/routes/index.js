@@ -6,6 +6,7 @@ const contactRouter = require('./contact');
 const userRouter = require('./user');
 const rentalListingRouter = require('./rentalListing');
 const cartRouter = require('./cart');
+const adminRouter = require('./admin');
 
 
 
@@ -19,6 +20,7 @@ function route(app) {
     app.use('/user', userRouter);
     app.use('/rentalListing', rentalListingRouter);
     app.use('/cart', cartRouter);
+    app.use('/admin', adminRouter);
     app.use('/', userRouter);
     
 }

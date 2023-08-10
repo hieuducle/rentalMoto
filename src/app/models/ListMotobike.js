@@ -12,6 +12,9 @@ const ListMotobike = new Schema({
     image:{
         type:String
     },
+    price:{
+      type:String
+  },
   slug: { type: String, slug: 'name', unique: true }
 }, {
   timestamps: true,
