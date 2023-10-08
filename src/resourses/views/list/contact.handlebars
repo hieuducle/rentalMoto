@@ -1,0 +1,114 @@
+   <div class="navbar-container">
+            <div class="navbar">
+                <div class="navbar-left">
+                  <a href="/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Emblem_of_Hanoi.svg/1200px-Emblem_of_Hanoi.svg.png" alt=""></a>
+                  
+                    
+                    <a href="/">Trang chủ</a>
+                    <a href="/listMotobikes/list">Danh sách xe </a> 
+                    
+                    {{!-- <a href="/priceTable/">Bảng giá</a> --}}
+                    <a href="/policy/">Chính sách</a>
+                    <a href="/contact/">Liên hệ</a>
+                    {{#if user}}
+
+            
+                        <a href="/user/cart">Giỏ hàng</a>
+                    {{/if}}
+
+                    
+                </div>
+                <div class="navbar-right">
+                    <div class="find-a-store">
+                        <svg
+                            aria-hidden="true"
+                            class="valign-middle pr2"
+                            focusable="false"
+                            preserveAspectRatio="xMidYMid meet"
+                            style="
+                                width: 32px;
+                                height: 32px;
+                                overflow: visible;
+                                fill: currentColor;
+                            "
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                d="M12,11.475 C10.5214286,11.475 9.32142857,10.299 9.32142857,8.85 C9.32142857,7.401 10.5214286,6.225 12,6.225 C13.4785714,6.225 14.6785714,7.401 14.6785714,8.85 C14.6785714,10.299 13.4785714,11.475 12,11.475 M12,1.5 C7.85357143,1.5 4.5,4.7865 4.5,8.85 C4.5,14.3625 12,22.5 12,22.5 C12,22.5 19.5,14.3625 19.5,8.85 C19.5,4.7865 16.1464286,1.5 12,1.5"
+                            ></path>
+                        </svg>
+                        
+                    </div>
+                    
+                      {{#if user}}
+
+            
+                        <div>{{user.name}}</div>
+                        <div><a href="/user/logout">Đăng xuất</a></div>
+                        
+              
+            {{else}}
+              <div class="sign-in"><a href="/user/signIn">Đăng nhập</a></div>
+                    <div class="sign-in"><a href="/user/signUp">Đăng kí</a></div>
+            {{/if}}
+                </div>
+            </div>
+        </div>
+
+
+
+
+<div class="container-form">
+        <h2>Đăng ký thuê xe máy</h2>
+        <form id="rentalForm">
+            <label for="name">Họ tên:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Số điện thoại:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="bikeType">Loại xe:</label>
+            <select id="bikeType" name="bikeType" required>
+                <option value="">Chọn loại xe</option>
+                <option value="Scooter">Scooter</option>
+                <option value="Moto">Moto</option>
+                <option value="Trail">Trail</option>
+                <!-- Thêm các loại xe khác vào đây -->
+            </select>
+
+            <label for="rentalDuration">Thời gian thuê (số ngày):</label>
+            <input type="number" id="rentalDuration" name="rentalDuration" min="1" required>
+
+            <button type="submit">Đăng ký</button>
+        </form>
+    </div>
+<script>
+
+    const form = document.getElementById('rentalForm');
+
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    // Lấy thông tin từ form
+    const name = form.elements['name'].value;
+    const email = form.elements['email'].value;
+    const phone = form.elements['phone'].value;
+    const bikeType = form.elements['bikeType'].value;
+    const rentalDuration = form.elements['rentalDuration'].value;
+
+    // Xử lý dữ liệu, ví dụ: gửi thông tin đăng ký tới server
+    // Ở đây có thể sử dụng AJAX hoặc fetch API để gửi dữ liệu đăng ký lên server
+
+    // Sau khi xử lý thành công, có thể thêm thông báo hoặc chuyển hướng trang
+
+    // Ví dụ:
+    alert('Đăng ký thành công!');
+
+    // Reset form
+    form.reset();
+});
+</script>
+

@@ -1,0 +1,114 @@
+<head>
+    <link rel="stylesheet" href="/css/checkout.css">
+</head>
+
+
+<div class="container">
+        <h1>Thanh Toán Thuê Xe Máy</h1>
+        
+        <form method="POST" action = "/cart/{{motobike._id}}/vnpay">
+            
+            <div class="form-group">
+                <label for="username">Tên người thuê:</label>
+                <input type="text" id="username" name="username" value="{{motobike.username}}" required> 
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Số điện thoại:</label>
+                <input type="tel" id="phone" name="phone" value="{{motobike.phone}}" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="name">Tên xe:</label>
+                <input type="text" id="name" name="name" value="{{motobike.name}}" required>
+            </div>
+
+                <div class="form-group">
+                    <label for="image">Ảnh xe:</label>
+
+                    <img  style=" width: 270px;height: 180px;margin-left: 15px; margin-top: 16px;" src="{{motobike.image}}" alt="{{motobike.image}}">
+                    <input type="text" id="image" name="image" value="{{motobike.image}}" style="display: none;">
+
+                
+                </div>  
+
+            <div class="form-group">
+                <label for="price">Giá:</label>
+                {{!-- <input type="number" id="bikePrice" name="bikePrice" required> --}}
+                <input type="text" class="form-control" id="price" name="price"  value="{{motobike.price  }}" required>
+                {{!-- <input type="text" id="renterName" name="renterName" value="{{motobike.username}}" required>  --}}
+            </div>
+            <div class="form-group">
+                <label for="address">Địa chỉ:</label>
+                <input type="text" id="address" name="address"  required>
+            </div>
+            
+            <div class="form-group">
+                <label for="startDate">Ngày nhận:</label>
+                <input type="date" id="startDate" name="startDate" required>
+            </div>
+            <div class="form-group">
+                <label for="endDate">Ngày trả:</label>
+                <input type="date" id="endDate" name="endDate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Chọn Phương thức thanh toán:</label>
+                  <label class="control-label">
+                    <div class="controls">
+                      <label class="radio-inline">
+                        <input type="radio" name="bankCode" id="defaultPaymentMethod"> Thanh toán khi nhận xe
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="bankCode" id="defaultPaymentMethod" value="" checked="true"> Cổng thanh toán VNPAYQR
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="bankCode" id="vnpayqrPaymentMethod" value="VNPAYQR"> Thanh toán qua ứng dụng hỗ trợ VNPAYQR
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="bankCode" id="vnbankPaymentMethod" value="VNBANK"> Thanh toán qua ATM-Tài khoản ngân hàng nội địa
+                      </label>
+                      <label class="radio-inline">
+                        <input type="radio" name="bankCode" id="intcardPaymentMethod" value="INTCARD"> Thanh toán qua thẻ quốc tế
+                      </label>
+                    </div>
+                  </label>
+              </div>
+
+
+              <div class="form-group">
+                <label for="language">Ngôn ngữ</label>
+                <label class="control-label">
+                  <div class="controls">
+                    <label class="radio-inline">
+                      <input type="radio" name="language" id="vnLanguage" value="vn" checked="true"> Tiếng việt
+                    </label>
+                    <label class="radio-inline">
+                      <input type="radio" name="language" id="enLanguage" value="en"> Tiếng anh
+                    </label>
+                  </div>
+                </label>
+              </div>  
+
+            <div class="form-group">
+                {{!-- <a href="" class="btn btn-primary " >Thanh Toán ở đây</a> --}}
+                <button type="submit" class="btn btn-primary">Thanh toán</button>
+            </div>
+            
+        </form>
+    </div>
+
+
+
+
+  
+    
+
+    
+
+    
+  
+  
+
+
