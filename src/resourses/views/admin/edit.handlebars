@@ -1,0 +1,23 @@
+<div class="mt-4">
+    <h3>Sửa sản phẩm</h3>
+
+            <form method="POST" action = "/admin/{{product._id}}/update?_method=PUT">
+            <div class="form-group">
+                <label for="name">Tên xe</label>
+                <input type="text" class="form-control" id="name" name="name" value="{{product.name}}">
+            </div>
+
+            <div class="form-group">
+                <label for="price">Giá</label>
+                <input type="text" class="form-control" id="price" name="price" value="{{product.price}}">
+            </div>
+
+
+        <div class="form-group">
+            <label for="image">Thêm hình ảnh</label>
+            <input type="text" class="form-control" id="image" name="image">
+        </div>
+        <button type="submit" class="btn btn-primary">Thêm</button>
+        </form>
+</div>
+
